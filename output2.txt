@@ -1,0 +1,7 @@
+/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=52238:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/preyasikumar/IdeaProjects/Ultimad/out/production/Ultimad Main
+What is the World Time? 
+27364375
+It is 0:55 on day 24 of the year 53.
+Trammel is in day 5 of its 9 day phase.
+Felucca is in day 6 of its 14 day phase.
+Process finished with exit code 0
