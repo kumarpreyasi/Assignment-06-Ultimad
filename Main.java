@@ -11,45 +11,55 @@ public class Main {
         //First year = 1, first day of the year = 1
         //Moons Trammel = 9 day cycle (9*1440 minutes = 12960 minutes), Felucca = 14 day cycle (14*1440 minutes = 20160 minutes)
 
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("What is the World Time? ");
+
+        Scanner sc = new Scanner(System.in);
         worldTime = sc.nextInt();
 
-        System.out.printf("It is %d:%d on day %d of the year %d.", calcHours(worldTime), calcMinutes(worldTime), calcDays(worldTime), calcYear(worldTime));
-        System.out.printf("\nTrammel is in day %d of its 9 day phase.", calcTrammel(worldTime));
-        System.out.printf("\nFelucca is in day %d of its 14 day phase.", calcFelucca(worldTime));
+        //System.out.println("World Time is = "+worldTime);
+
+        int hours = calcHours();
+        int minutes = calcMinutes();
+        int days = calcDays();
+        int year = calcYear();
+
+        System.out.printf("It is %d:%d on day %d of the year %d.", hours, minutes, days, year);
+
+        int trammelDays = calcTrammel();
+        System.out.printf("\nTrammel is in day %d of its 9 day phase.", trammelDays);
+
+        int feluccaDays = calcFelucca();
+        System.out.printf("\nFelucca is in day %d of its 14 day phase.", feluccaDays);
 
     }
 
-    public static int calcYear(int year) {
-        year = worldTime/525600 + 1;
-        return year;
-    }
-
-    public static int calcDays(int days) {
-        days = ((worldTime%525600)/1440) + 1;
-        return days;
-    }
-
-    public static int calcHours(int hours) {
-        hours = worldTime%525600%1440/60;
+    public static int calcHours() {
+        int hours = worldTime%525600%1440/60;
         return hours;
-
     }
 
-    public static int calcMinutes(int minutes) {
-        minutes = worldTime%525600%1440%60;
+    public static int calcMinutes() {
+        int minutes = worldTime%525600%1440%60;
         return minutes;
     }
 
-    public static int calcTrammel(int Trammel) {
-        Trammel = ((worldTime/1440)%9) + 1;
+    public static int calcDays() {
+        int days = ((worldTime%525600)/1440) + 1;
+        return days;
+    }
+
+    public static int calcYear() {
+        int year = worldTime/525600 + 1;
+        return year;
+    }
+
+    public static int calcTrammel() {
+        int Trammel = ((worldTime/1440)%9) + 1;
         return Trammel;
     }
 
-    public static int calcFelucca(int Felucca) {
-        Felucca = ((worldTime/1440)%14) + 1;
+    public static int calcFelucca() {
+        int Felucca = ((worldTime/1440)%14) + 1;
         return Felucca;
     }
 
